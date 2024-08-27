@@ -1,0 +1,30 @@
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
+// Initialize the LCD with the I2C address (0x27) and size (16x2)
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+// Analog pin connected to TCRT5000 OUT
+const int sensorPin = A0;
+
+void setup() {
+  lcd.begin(); // Initialize the LCD
+  lcd.backlight(); // Turn on the backlight
+  lcd.setCursor(0, 0); // Set the cursor to the first line
+  lcd.print("Glucose Level:");
+}
+
+void loop() {
+  int sensorValue = analogRead(sensorPin); // Read the sensor value
+
+  // Convert the sensor value to glucose concentration
+  // Note: This is a placeholder. You need to calibrate this based on your setup
+  float glucoseValue = map(sensorValue, 0, 1023, 0, 100); 
+
+  lcd.setCursor(0, 1); // Set the cursor to the second line
+  lcd.print("Glucose: ");
+  lcd.print(glucoseValue);
+  lcd.print(" mg/dL");
+  
+  delay(1000); // Delay for readability
+}
