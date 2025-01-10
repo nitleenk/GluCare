@@ -1,1 +1,1 @@
-Non-Invasive Glucose Monitoring using NIR Spectroscopy. The system involves usage of Arduino UNO, Raspberry pi, Machine Learning models and sensors.
+Non-Invasive Glucose Monitoring using NIR Spectroscopy. The Monitoring System involves usage of Arduino UNO, Raspberry Pi, Machine Learning models and sensors.
